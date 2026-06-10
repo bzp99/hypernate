@@ -1321,9 +1321,10 @@ automatically canceled.</p>
 <p>When an issue is opened, the Triage Label workflow automatically adds the <code>needs-triage</code> label so
 new issues are easy to find and route.</p>
 <h2 id="design-approval">Design Approval</h2>
-<p>On every pull request (opened, edited, synchronized, or reopened), the Design Approval workflow
-checks that the PR links to an issue carrying the <code>design/approved</code> label. PRs that lack such a
-linked issue are flagged via the <code>needs-approved-issue</code> label.</p>
+<p>On every pull request (opened, edited, synchronized, or reopened), the Design Approval workflow checks that the PR links to an issue carrying the <code>design/approved</code> label.
+PRs that lack such a linked issue are flagged via the <code>needs-approved-issue</code> label.</p>
+<p>Because the workflow is triggered by changes to the PR, it will not rerun if a non-<code>design/approved</code> issue gets the <code>design/approved</code> label.
+In these cases, either a maintainer can force rerun the check or you can make a dummy change to the PR body (like adding a newline) and it will trigger the workflow.</p>
 <h2 id="stale-prs">Stale PRs</h2>
 <p>A scheduled daily job marks pull requests carrying the <code>needs-approved-issue</code> label as <code>stale</code>
 after 14 days of inactivity and closes them after 60 days. PRs labeled <code>pinned</code> or <code>security</code> are
