@@ -1,4 +1,4 @@
-# Hypernate - an entity framework for Hyperledger Fabric
+# Hypernate - a fantastic entity framework for Hyperledger Fabric
 
 If Fabric allows you to keep your familiar programming language, then Hypernate will allow you to _keep your familiar programming style._
 
